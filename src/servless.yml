@@ -1,0 +1,17 @@
+service: auth-service
+
+provider:
+  name: aws
+  runtime: java11
+  region: us-east-1
+
+functions:
+  auth:
+    handler: com.challenge.lanchonete.auth.AuthFunction::handleRequest
+    events:
+      - http:
+          path: api/auth
+          method: get
+
+plugins:
+  - serverless-spring-boot
