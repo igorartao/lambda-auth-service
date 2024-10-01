@@ -18,6 +18,9 @@ jobs:
         with:
           java-version: '17'
 
+      - name: Install Serverless Framework
+        run: npm install -g serverless
+
       - name: Build with Maven
         run: mvn clean package
 
